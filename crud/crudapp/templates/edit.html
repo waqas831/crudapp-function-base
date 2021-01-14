@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+%load static %}
+{% block record %}
+
+<div class="parent">
+<table class="table">
+  <tr>
+      <th>p_id</th>
+    <th>p_name</th>
+    <th>catagory</th>
+    <th>quantity</th>
+    <th>quality</th>
+    <th>room</th>
+  </tr>
+    {% for value in data %}
+  <tr>
+      <td>{{value.id}}</td>
+    <td>{{value.p_name}}</td>
+     <td>{{value.catagory}}</td>
+     <td>{{value.quantity}}</td>
+     <td>{{value.quality}}</td>
+     <td>{{value.room}}</td>
+      <td><button class="btn btn-warning"><a href="edit/{{value.id}}">edit</a></button></td>
+     <td><button class="btn btn-warning"><a href="delete/{{value.id}}">delete</a></button></td>
+  </tr>
+  {% endfor %}
+  </table>
+</div>
+
+{% endblock %}
